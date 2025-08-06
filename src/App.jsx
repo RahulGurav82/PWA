@@ -80,7 +80,7 @@ const App = () => {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>BABABA</h1>
+        <h1>After Update</h1>
         <div className="status-indicators">
           <div className={`status ${isOnline ? 'online' : 'offline'}`}>
             {isOnline ? '🟢 Online' : '🔴 Offline'}
