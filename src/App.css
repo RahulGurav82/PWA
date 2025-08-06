@@ -1,0 +1,329 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+/* Header */
+.app-header {
+  background: linear-gradient(135deg, #646cff 0%, #535bf2 100%);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.status-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.status.online {
+  background: rgba(34, 197, 94, 0.2);
+  color: #16a34a;
+}
+
+.status.offline {
+  background: rgba(239, 68, 68, 0.2);
+  color: #dc2626;
+}
+
+.status.installed {
+  background: rgba(59, 130, 246, 0.2);
+  color: #2563eb;
+}
+
+.status.update {
+  background: rgba(245, 158, 11, 0.2);
+  color: #d97706;
+}
+
+/* Main content */
+.app-main {
+  flex: 1;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.content {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.content h2 {
+  color: #1f2937;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.content > p {
+  color: #6b7280;
+  font-size: 1.125rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Features grid */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.feature {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature h3 {
+  color: #1f2937;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feature p {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Install prompt */
+.install-prompt {
+  background: linear-gradient(135deg, #646cff 0%, #535bf2 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
+  margin-top: 2rem;
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Update prompt */
+.update-prompt {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
+  margin-top: 2rem;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.install-content h3,
+.update-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.install-content p,
+.update-content p {
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.install-button,
+.update-button {
+  background: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.install-button {
+  color: #646cff;
+}
+
+.update-button {
+  color: #d97706;
+}
+
+.install-button:hover,
+.update-button:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.install-button:active,
+.update-button:active {
+  transform: translateY(0);
+}
+
+/* Footer */
+.app-footer {
+  background: #1f2937;
+  color: #9ca3af;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 1.25rem;
+  }
+  
+  .content {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .features {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .feature {
+    padding: 1rem;
+  }
+  
+  .install-prompt,
+  .update-prompt {
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-main {
+    padding: 1rem 0.5rem;
+  }
+  
+  .content {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  
+  .status-indicators {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  }
+  
+  .app {
+    background: rgba(17, 24, 39, 0.95);
+  }
+  
+  .content {
+    background: #374151;
+    color: #f9fafb;
+  }
+  
+  .content h2 {
+    color: #f9fafb;
+  }
+  
+  .content > p {
+    color: #d1d5db;
+  }
+  
+  .feature {
+    background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+  }
+  
+  .feature h3 {
+    color: #f9fafb;
+  }
+  
+  .feature p {
+    color: #d1d5db;
+  }
+}
+
+/* PWA specific styles */
+@media (display-mode: standalone) {
+  .app-header {
+    padding-top: calc(1rem + env(safe-area-inset-top));
+  }
+  
+  .app-footer {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+}
